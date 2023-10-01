@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    container_name: "db-prisma-fastify"
+    restart: always
+    volumes:
+      - ./db-primsa-fastify-api:/var/liv/postgresql/data
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+
+volumes:
+ db-primsa-fastify-api:
